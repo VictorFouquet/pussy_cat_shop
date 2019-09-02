@@ -7,4 +7,9 @@ class User < ApplicationRecord
   has_many :sales
   has_many :items, through: :sales, foreign_key: "user_id"
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> Jo
 end

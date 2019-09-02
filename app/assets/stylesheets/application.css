@@ -10800,10 +10800,9 @@ legend {
 .list-group-item h5,
 .list-group-item h6 {
   color: inherit;
-<<<<<<< HEAD
+
 }
-=======
-}
+
 
 /*	###   RCC Edit   ###################################################################################   */
 
@@ -10842,5 +10841,3 @@ legend {
 .index-item-grid{
   width: 100vw !important;
 }
-
->>>>>>> RCC

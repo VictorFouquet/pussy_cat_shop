@@ -5,9 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :sales
   has_many :items, through: :sales, foreign_key: "user_id"
-  after_create :welcome_send
 
-def welcome_send
-  UserMailer.welcome_email(self).deliver_now
-end
+
+
 end

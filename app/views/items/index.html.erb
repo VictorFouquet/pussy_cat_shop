@@ -1,0 +1,33 @@
+<div class="index-body">
+	<div class="jumbotron jumbotron-index">
+		<p class="lead text-light bienvenue-index">Bienvenue sur</p>
+		<h1 class="display-3 text-light">Pussy Cat Shop</h1>
+		<p class="lead text-light">Trouvez votre bonheur grace à notre incroyable sélection de photo de chatons ;)</p>
+	</div>
+
+	<div class="d-flex justify-content-center">
+		<h1 class="text-center text-secondary bg-light decouvrez-bg">Découvrez nos photos</h1>
+	</div>
+
+	<div class="d-flex justify-content-center row align-content-start index-item-grid">
+		<% Item.all.each do |item| %>
+			<div class="card mb-3 index-card">
+				<h3 class="card-header"><%= item.title %></h3>
+				<div class="card-body">
+					<h6 class="card-subtitle text-muted"><%= item.price %></h6>
+				</div>
+				<img style="height: 200px; width: 100%; display: block;" src="https://wallpaperaccess.com/full/256042.jpg" alt="Card image" class="index-card-img">
+				<div class="card-body">
+					<p class="card-text"><%= item.description %></p>
+				</div>
+				<div class="card-body">
+					<a href="#" class="card-link">Détails</a>
+					<a href="#" class="card-link">Acheter</a>
+				</div>
+				<div class="card-footer text-muted">
+					<p class="card-text">ajouté le</p>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

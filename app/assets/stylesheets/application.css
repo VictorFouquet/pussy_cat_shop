@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 /*!
  * Bootswatch v4.3.1
  * Homepage: https://bootswatch.com
@@ -13,7 +12,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -10867,4 +10866,3 @@ legend {
 .carousel-perso {
   height: 250px;
 }
->>>>>>> a9642144f59d5ec3aa54d30ae1f9203f56fc31c8

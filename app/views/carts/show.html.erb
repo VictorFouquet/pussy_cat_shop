@@ -1,0 +1,27 @@
+<div class="cart-body">
+	<br><br>
+	<div class="card bg-secondary border-secondary cart_card">
+		<h3 class="text-light">Panier</h3>
+	</div>
+
+	<div class="card border-light cart_card_2">
+
+		<% @pics.each do |cart_item| %>
+
+			<h5><%= cart_item.item.title %></h5>
+			<div class="card-body cart_card-body">
+				<div class="d-flex justify-content-between">
+					<p class="card-text text-secondary"><%= cart_item.item.price %> $</p>
+					<a type="button" class="btn btn-danger"<%= link_to "X", item_current_order_path(cart_item.id), method: :delete %></a>
+				</div>
+			</div>
+
+			<hr>
+
+		<% end %>
+		<div class="d-flex justify-content-between">
+		<p class="lead">Total: <%= @sub_total %> $</p>
+		<a type="button" class="btn btn-secondary"<%= link_to "Acheter", sales_path, method: :create %></a>
+		</div>
+	</div>
+</div>

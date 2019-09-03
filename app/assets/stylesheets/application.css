@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 /*!
  * Bootswatch v4.3.1
  * Homepage: https://bootswatch.com
@@ -10841,3 +10843,28 @@ legend {
 .index-item-grid{
   width: 100vw !important;
 }
+
+/*	###   matthieu Edit   ###################################################################################   */
+
+.container-cat-product {
+  margin-top: 100px;
+  padding-left: 15px;
+}
+
+.newarrival {
+  background: green;
+  width: 50px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.col-md-7
+{
+  color: #555;
+  }
+
+.carousel-perso {
+  height: 250px;
+}
+>>>>>>> a9642144f59d5ec3aa54d30ae1f9203f56fc31c8

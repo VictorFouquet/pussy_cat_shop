@@ -21,8 +21,8 @@
 					<p class="card-text"><%= item.description %></p>
 				</div>
 				<div class="card-body">
-					<a href="#" class="card-link">Détails</a>
-					<a href="#" class="card-link">Acheter</a>
+					<a class ="btn btn-secondary"<%= link_to "Détails ", item_path(item.id) %></a>
+					<a class="btn btn-secondary"<%= link_to "Ajouter au panier ", item_current_orders_path(item.id), method: :create %> </a>
 				</div>
 				<div class="card-footer text-muted">
 					<p class="card-text">ajouté le</p>

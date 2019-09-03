@@ -18,7 +18,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" <%= link_to "Pussy cat shop", root_path %></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -42,6 +42,26 @@
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <% if user_signed_in? %>
+      <% if current_user.cart == nil %>
+        <% Cart.create(user: current_user) %>
+        <% end %>
+  <% if current_user.cart != nil %>
+  <% current_user.cart.items.length %>
+    <a type="button" class="btn btn-secondary"<%= link_to "Panier (#{current_user.cart.items.length})", root_path %></a>
+  <% end %>
+
+
+                  <a type="button" class="btn btn-secondary"<%= link_to "Déconnexion ", '/users/sign_out', method: :delete %></a>
+                  <a type="button" class="btn btn-secondary"<%= link_to "Mon profil", root_path %></a>
+
+                  <% else %>
+
+                  <a type="button" class="btn btn-secondary" <%= link_to "Crée un compte", '/users/sign_up' %></a>
+                  <a type="button" class="btn btn-secondary" <%= link_to "Se connecter",'/users/sign_in' %></a>
+
+                  <% end %>
+
   </div>
 </nav>
 

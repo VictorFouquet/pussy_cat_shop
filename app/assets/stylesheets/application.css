@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 /*!
  * Bootswatch v4.3.1
  * Homepage: https://bootswatch.com
@@ -11,6 +13,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 
  /*!
@@ -10842,6 +10845,8 @@
    height: 250px;
  }
 =======
+=======
+>>>>>>> delivery
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 :root {
   --blue: #007bff;
@@ -21631,10 +21636,9 @@ legend {
 .list-group-item h5,
 .list-group-item h6 {
   color: inherit;
-<<<<<<< HEAD
+
 }
-=======
-}
+
 
 /*	###   RCC Edit   ###################################################################################   */
 
@@ -21674,5 +21678,32 @@ legend {
   width: 100vw !important;
 }
 
+<<<<<<< HEAD
 >>>>>>> RCC
 >>>>>>> ae5da3ca3826e5149f8c645dc42a18c5ffad5ccc
+=======
+/*	###   matthieu Edit   ###################################################################################   */
+
+.container-cat-product {
+  margin-top: 100px;
+  padding-left: 15px;
+}
+
+.newarrival {
+  background: green;
+  width: 50px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.col-md-7
+{
+  color: #555;
+  }
+
+.carousel-perso {
+  height: 250px;
+}
+>>>>>>> a9642144f59d5ec3aa54d30ae1f9203f56fc31c8
+>>>>>>> delivery

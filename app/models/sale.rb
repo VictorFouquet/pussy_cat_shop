@@ -6,6 +6,6 @@ class Sale < ApplicationRecord
 
 	def sale_mail
 	    UserMailer.welcome_email(self.user).deliver_now
-		  AdminMailer.admin_mailer.deliver_now
+		  AdminMailer.admin_mailer(self.user).deliver_now
 	  end
 end

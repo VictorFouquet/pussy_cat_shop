@@ -1,14 +1,14 @@
-class AdminMailer < ApplicationMailer
+class WelcomeUserMailer < ApplicationMailer
   default from: 'puspicatshop@gmail.com'
 
-  def admin_mailer(user)
+  def welcome_user_emails(user)
     #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
-    @user = user 
+    @user = user
 
     #on définit une variable @url qu'on utilisera dans la view d’e-mail
-    @url  = 'http://monsite.fr/login'
+    @url  = 'https://pussycat.herokuapp.com/'
 
     # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
-    mail(to: 'puspicatshop@gmail.com', subject: 'Nouvelle vente !!')
+    mail(to: @user.email, subject: 'Welcome to PussyCat')
   end
 end

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root "items#index"
   get 'profils/index'
 
-  root "items#index"
+
   resources :items do
     resources :current_orders, only: [:create, :destroy]
     resources :avatars, only: [:create]

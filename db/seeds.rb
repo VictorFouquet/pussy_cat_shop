@@ -12,11 +12,13 @@ User.destroy_all
 
 10.times do
 
-	password = 343434;
+	allCatsPics = ["Cat-1.jpg", "Cat-2.jpg", "Cat-3.jpg", "Cat-4.jpg", "Cat-5.jpg", "Cat-6.jpg", "Cat-7.jpg", "Cat-8.jpg", "Cat-9.jpg"]
+
+	password = "mdpmdp";
 
 	user = User.create!(user_name: Faker::Name.first_name, email: Faker::Internet.email, password: password, password_confirmation: password)
   
-	item = Item.create!(title: Faker::Music::RockBand.name, description: Faker::Lorem.paragraph, price: Faker::Number.between(from: 1, to: 15), image_url: Rails.root.join("app/assets/images/kitten-index.jpg").open)
+	item = Item.create!(title: Faker::Music::RockBand.name, description: Faker::Lorem.paragraph, price: Faker::Number.between(from: 1, to: 15), image_url: allCatsPics.sample)
   
 	sale = Sale.create!(user: User.all.sample, item: Item.all.sample)
 

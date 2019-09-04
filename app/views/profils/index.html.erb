@@ -19,7 +19,7 @@
 			</div>
 			<h5><%= @current_user.email %></h5>
 			<br>
-				
+
 		</div>
 		<hr>
 		<div>
@@ -38,9 +38,10 @@
 			<% @current_user.sales.each.with_index do |sale, index1| %>
 
 				<div class="d-flex">
-					<p class="card-text text-secondary">Commande <%= index1 %></p>
+					<p class="card-text text-secondary">Commande <%= index1 +1 %> </p>
 				</div>
-				<h5><%= sale %></h5>
+				<h5><%= sale.item.title %></h5>
+
 				<hr>
 				<br>
 

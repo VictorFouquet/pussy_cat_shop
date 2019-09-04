@@ -1,7 +1,7 @@
 class WelcomeUserMailer < ApplicationMailer
   default from: 'puspicatshop@gmail.com'
 
-  def welcome_email(user)
+  def welcome_user_emails(user)
     #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
     @user = user
 

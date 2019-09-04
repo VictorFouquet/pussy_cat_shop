@@ -14,8 +14,6 @@ class CartsController < ApplicationController
   end
 
   def destroy
-  puts params
-  @order = CurrentOrder.find(params[:id])
-  @order.destroy
+
   end
 end

@@ -16,7 +16,11 @@
 				<div class="card-body">
 					<h6 class="card-subtitle text-muted"><%= item.price %></h6>
 				</div>
-				<img style="height: 200px; width: 100%; display: block;" src="https://wallpaperaccess.com/full/256042.jpg" alt="Card image" class="index-card-img">
+				<%if item.avatar.attached?%>
+  				<%= image_tag item.avatar, alt: 'avatar' %>
+				<% else %>
+					<img style="height: 200px; width: 100%; display: block;" src="https://wallpaperaccess.com/full/256042.jpg" alt="Card image" class="index-card-img">
+				<% end %>
 				<div class="card-body">
 					<p class="card-text"><%= item.description %></p>
 				</div>

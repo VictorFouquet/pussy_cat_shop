@@ -3,6 +3,7 @@ class Item < ApplicationRecord
 	has_many :current_orders
 	has_many :users, through: :sales, foreign_key: "item_id"
 	has_many :carts, through: :current_orders, foreign_key: "item_id"
+	has_one_attached :avatar
 
 	validates :title,
 		presence: true,

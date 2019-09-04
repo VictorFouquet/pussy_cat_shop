@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get 'carts/destroy'
   root "items#index"
   resources :items do
-  resources :current_orders, only: [:create, :destroy]
+    resources :current_orders, only: [:create, :destroy]
+    resources :avatars, only: [:create]
   end
   resources :carts
   resources :sales, only: [:create]

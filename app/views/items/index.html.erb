@@ -25,9 +25,13 @@
 					<p class="card-text"><%= item.description %></p>
 				</div>
 				<div class="card-body">
-					<a class ="btn btn-secondary"><%= link_to "Détails ", item_path(item.id) %></a>
-					<% unless current_user.cart.items.include? (item) %>
-						<a class="btn btn-secondary"><%= link_to "Ajouter au panier ", item_current_orders_path(item.id), method: :create %> </a>
+					<a class ="btn btn-secondary"<%= link_to "Détails ", item_path(item.id) %></a>
+					<% if current_user %>
+						<% unless current_user.cart.items.include? (item) %>
+							<a class="btn btn-secondary"<%= link_to "Ajouter au panier ", item_current_orders_path(item.id), method: :create %> </a>
+						<% end %>
+					<% else %>
+							<a class="btn btn-secondary"<%= link_to "Ajouter au panier ", item_current_orders_path(item.id), method: :create %> </a>
 					<% end %>
 				</div>
 				<div class="card-footer text-muted">

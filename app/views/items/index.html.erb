@@ -14,9 +14,11 @@
 			<div class="card mb-3 index-card">
 				<h3 class="card-header"><%= item.title %></h3>
 				<div class="card-body">
-					<h6 class="card-subtitle text-muted"><%= item.price %></h6>
+					<h6 class="card-subtitle text-muted"><%= item.price %> $</h6>
 				</div>
-				<img style="height: 200px; width: 100%; display: block;" src="https://wallpaperaccess.com/full/256042.jpg" alt="Card image" class="index-card-img">
+				<div class="index-card-img-container">
+					<%= image_tag(item.image_url, :alt => "Cat", :class => "index-card-img") %>
+				</div>
 				<div class="card-body">
 					<p class="card-text"><%= item.description %></p>
 				</div>

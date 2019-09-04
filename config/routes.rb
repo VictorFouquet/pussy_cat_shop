@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'profils/index'
   get 'carts/show'
   get 'carts/destroy'
   root "items#index"

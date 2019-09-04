@@ -25,56 +25,32 @@
 
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-      <% if user_signed_in? %>
+      </li>
+    </ul>
+    <% if user_signed_in? %>
+
       <% if current_user.cart == nil %>
         <% Cart.create(user: current_user) %>
-<<<<<<< HEAD
       <% end %>
+
       <% if current_user.cart != nil %>
+
         <% current_user.cart.items.length %>
-        <a type="button" class="btn btn-secondary"<%= link_to "Panier (#{current_user.cart.items.length})", cart_path(current_user.cart.id) %></a>
-      <% end %>
-=======
-        <% end %>
-  <% if current_user.cart != nil %>
-  <% current_user.cart.items.length %>
-    <a type="button" class="btn btn-secondary"<%= link_to "Panier (#{current_user.cart.current_orders.length})", root_path %></a>
-
-  <% end %>
->>>>>>> a130032c97b6767dc3c37ca43d9518d9e85fff2f
-
-
-        <a type="button" class="btn btn-secondary"<%= link_to "Déconnexion ", '/users/sign_out', method: :delete %></a>
-        <a type="button" class="btn btn-secondary"<%= link_to "Mon profil", root_path %></a>
-
-      <% else %>
-
-        <a type="button" class="btn btn-secondary" <%= link_to "Crée un compte", '/users/sign_up' %></a>
-        <a type="button" class="btn btn-secondary" <%= link_to "Se connecter",'/users/sign_in' %></a>
-
+        <a type="button" class="btn btn-secondary"<%= link_to "Panier (#{current_user.cart.current_orders.length})", carts_path(current_user.cart.id) %></a>
       <% end %>
 
-    </div>
-  </nav>
+      <a type="button" class="btn btn-secondary"<%= link_to "Déconnexion ", '/users/sign_out', method: :delete %></a>
+      <a type="button" class="btn btn-secondary"<%= link_to "Mon profil", profils_index_path%></a>
 
-  <%= yield %>
+    <% else %>
+      <a type="button" class="btn btn-secondary" <%= link_to "Crée un compte", '/users/sign_up' %></a>
+      <a type="button" class="btn btn-secondary" <%= link_to "Se connecter",'/users/sign_in' %></a>
+    <% end %>
+
+  </div>
+</nav>
+
+<%= yield %>
 </body>
 
 </html>

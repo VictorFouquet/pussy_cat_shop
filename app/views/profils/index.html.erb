@@ -1,0 +1,51 @@
+<div class="cart-body">
+	<br><br>
+	<div class="card bg-secondary border-secondary cart_card">
+		<h3 class="text-light">Votre profil</h3>
+	</div>
+
+	<div class="card border-light cart_card_2">
+		<div class="card-body cart_card-body">
+
+			<div class="d-flex">
+				<p class="card-text text-secondary">Username</p>
+			</div>
+			<h5><%= @current_user.user_name %></h5>
+			<hr>
+			<br>
+
+			<div class="d-flex">
+				<p class="card-text text-secondary">Email</p>
+			</div>
+			<h5><%= @current_user.email %></h5>
+			<br>
+				
+		</div>
+		<hr>
+		<div>
+			<a type="button" class="btn btn-secondary"<%= link_to "Editer mon profil / Mot de passe", edit_user_registration_path %></a>
+		</div>
+	</div>
+	<br>
+
+	<div class="card bg-secondary border-secondary cart_card">
+		<h3 class="text-light">Vos commandes</h3>
+	</div>
+
+	<div class="card border-light cart_card_2">
+		<div class="card-body cart_card-body">
+
+			<% @current_user.sales.each.with_index do |sale, index1| %>
+
+				<div class="d-flex">
+					<p class="card-text text-secondary">Commande <%= index1 %></p>
+				</div>
+				<h5><%= sale %></h5>
+				<hr>
+				<br>
+
+			<% end %>
+
+		</div>
+	</div>
+</div>

@@ -221,6 +221,7 @@ th {
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
+  font-size: 20px;
 }
 
 button {
@@ -10854,6 +10855,19 @@ legend {
 
 .cart-top-space{
 
+}
+
+.edit-pw-info-space{
+  height: 4px
+}
+
+.index-card-img{
+
+}
+
+.index-card-img-container{
+  max-height: 300px;
+  overflow: hidden;
 }
 
 /*	###   matthieu Edit   ###################################################################################   */

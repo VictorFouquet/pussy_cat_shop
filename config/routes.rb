@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'carts/show'
-  get 'carts/destroy'
+  get 'profils/index'
+
   root "items#index"
   resources :items do
     resources :current_orders, only: [:create, :destroy]

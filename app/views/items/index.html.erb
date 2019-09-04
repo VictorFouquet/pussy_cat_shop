@@ -14,7 +14,7 @@
 			<div class="card mb-3 index-card">
 				<h3 class="card-header"><%= item.title %></h3>
 				<div class="card-body">
-					<h6 class="card-subtitle text-muted"><%= item.price %></h6>
+					<h6 class="card-subtitle text-muted"><%= item.price %> $</h6>
 				</div>
 				<%if item.avatar.attached?%>
   				<%= image_tag item.avatar, alt: 'avatar' %>

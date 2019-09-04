@@ -1,4 +1,4 @@
-class AvatarsController < ApplicationController
+Erkosclass AvatarsController < ApplicationController
   def create
     @item = Item.find(params[:item_id])
     @item.avatar.attach(params[:avatar])

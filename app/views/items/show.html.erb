@@ -48,9 +48,13 @@
               <h4 class="b,strong"> Description:</h4>
               <p> <%= @item.description %> </p>
               <p class="price"><%= @item.price %>€</p>
+              <% if current_user %>
+              <% if current_user.is_admin? == true  %>
               <%= form_tag item_avatars_path(@item), multipart: true do %>
                 <%= file_field_tag :avatar %>
                 <%= submit_tag "uploader l'avatar" %>
+                <% end %>
+                <% end %>
               <% end %>
           </div>
         </div>

@@ -3,10 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<<<<<<< HEAD
-=======
 
->>>>>>> f86aacefc16b072a7c65918870b98daa77f5ff4d
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -51,7 +48,10 @@
               <h4 class="b,strong"> Description:</h4>
               <p> <%= @item.description %> </p>
               <p class="price"><%= @item.price %>€</p>
-
+              <%= form_tag item_avatars_path(@item), multipart: true do %>
+                <%= file_field_tag :avatar %>
+                <%= submit_tag "uploader l'avatar" %>
+              <% end %>
           </div>
         </div>
       </div>

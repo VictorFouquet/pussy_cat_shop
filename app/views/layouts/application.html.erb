@@ -31,6 +31,7 @@
 
       <% if current_user.cart == nil %>
         <% Cart.create(user: current_user) %>
+<<<<<<< HEAD
       <% end %>
 
       <% if current_user.cart != nil %>
@@ -38,6 +39,16 @@
         <% current_user.cart.items.length %>
         <a type="button" class="btn btn-secondary"<%= link_to "Panier (#{current_user.cart.current_orders.length})", carts_path(current_user.cart.id) %></a>
       <% end %>
+=======
+
+        <% end %>
+  <% if current_user.cart != nil %>
+  <% current_user.cart.items.length %>
+    <a type="button" class="btn btn-secondary"<%= link_to "Panier (#{current_user.cart.current_orders.length})", cart_path(current_user.cart.id) %></a>
+
+  <% end %>
+
+>>>>>>> delivery
 
       <a type="button" class="btn btn-secondary"<%= link_to "Déconnexion ", '/users/sign_out', method: :delete %></a>
       <a type="button" class="btn btn-secondary"<%= link_to "Mon profil", profils_index_path%></a>

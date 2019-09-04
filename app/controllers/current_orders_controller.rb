@@ -8,7 +8,9 @@ redirect_back(fallback_location: root_path)
 end
 
 def destroy
-
+  puts params
+  @order = CurrentOrder.find(params[:item_id])
+  @order.destroy
 end
 
 

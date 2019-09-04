@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
   def show
   	@pics = Cart.find(params[:id]).current_orders
-  	
+
   	def sub_total
 		sum = 0
 		current_user.cart.current_orders.each do |current_order|
@@ -14,5 +14,8 @@ class CartsController < ApplicationController
   end
 
   def destroy
+  puts params
+  @order = CurrentOrder.find(params[:id])
+  @order.destroy
   end
 end

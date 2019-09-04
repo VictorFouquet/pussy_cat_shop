@@ -57,15 +57,11 @@ ActiveRecord::Schema.define(version: 2019_09_04_073859) do
     t.text "description"
     t.decimal "price"
     t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "sales", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_sales_on_item_id"
     t.index ["user_id"], name: "index_sales_on_user_id"
   end

@@ -7,12 +7,7 @@
 	<div class="card border-light cart_card_2">
 		<div class="card-body cart_card-body">
 
-			<div class="d-flex">
-				<p class="card-text text-secondary">Username</p>
-			</div>
-			<h5><%= @current_user.user_name %></h5>
-			<hr>
-			<br>
+
 
 			<div class="d-flex">
 				<p class="card-text text-secondary">Email</p>
@@ -42,10 +37,10 @@
 
 				<% @current_user.sales.each.with_index do |sale, index1| %>
 
-					<div class="d-flex">
-						<p class="card-text text-secondary">Commande <%= index1 +1 %> </p>
-					</div>
-					<h5><%= sale.item.title %></h5>
+				<div class="d-flex">
+					<p class="card-text text-secondary">Commande <%= index1 +1 %> </p>
+				</div>
+				<h5><%= link_to sale.item.title, item_path(sale.item.id) %></h5>
 
 					<hr>
 					<br>

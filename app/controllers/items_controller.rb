@@ -23,9 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-  	puts("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-  	puts(params)
-  	puts("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
   	Item.find(params[:id]).destroy
+    redirect_back(fallback_location: root_path)    
   end
 end

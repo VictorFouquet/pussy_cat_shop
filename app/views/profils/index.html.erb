@@ -24,29 +24,57 @@
 		<hr>
 		<div>
 			<a type="button" class="btn btn-secondary"<%= link_to "Editer mon profil / Mot de passe", edit_user_registration_path %></a>
+			<% if current_user && current_user.is_admin? %> %>
+				<a type="button" class="btn btn-secondary"<%= link_to "Dashboard", sales_path %></a>
+				<a type="button" class="btn btn-secondary"<%= link_to "Nouveau produit", new_item_path %></a>
+			<% end %>
 		</div>
 	</div>
 	<br>
 
-	<div class="card bg-secondary border-secondary cart_card">
-		<h3 class="text-light">Vos commandes</h3>
-	</div>
-
-	<div class="card border-light cart_card_2">
-		<div class="card-body cart_card-body">
-
-			<% @current_user.sales.each.with_index do |sale, index1| %>
-
-				<div class="d-flex">
-					<p class="card-text text-secondary">Commande <%= index1 +1 %> </p>
-				</div>
-				<h5><%= sale.item.title %></h5>
-
-				<hr>
-				<br>
-
-			<% end %>
-
+	<% unless current_user && current_user.is_admin? %>
+		<div class="card bg-secondary border-secondary cart_card">
+			<h3 class="text-light">Vos commandes</h3>
 		</div>
-	</div>
+
+		<div class="card border-light cart_card_2">
+			<div class="card-body cart_card-body">
+
+				<% @current_user.sales.each.with_index do |sale, index1| %>
+
+					<div class="d-flex">
+						<p class="card-text text-secondary">Commande <%= index1 +1 %> </p>
+					</div>
+					<h5><%= sale.item.title %></h5>
+
+					<hr>
+					<br>
+
+				<% end %>
+
+			</div>
+		</div>
+	<% else %>
+		<div class="card bg-secondary border-secondary cart_card">
+			<h3 class="text-light">Vos produits</h3>
+		</div>
+
+		<div class="card border-light cart_card_2">
+			<div class="card-body cart_card-body">
+
+				<% @items.each.with_index do |item, index1| %>
+
+					<div class="d-flex">
+						<p class="card-text text-secondary">Produit <%= index1 +1 %> </p>
+					</div>
+					<h5><%= link_to item.title, item_path(item.id) %></h5>
+
+					<hr>
+					<br>
+
+				<% end %>
+
+			</div>
+		</div>
+	<% end %>
 </div>

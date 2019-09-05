@@ -9,6 +9,11 @@ class SalesController < ApplicationController
     current_user.cart.current_orders.destroy_all
   end
 
+  def index
+  	@sales = Sale.all
+  	@users = User.all
+  end
+
 
 
 end

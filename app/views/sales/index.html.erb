@@ -1,0 +1,51 @@
+<div class="cart-body">
+	<br><br>
+	<div class="card bg-secondary border-secondary cart_card">
+		<h3 class="text-light">Dashboard</h3>
+	</div>
+
+	<br>
+
+	<div class="card bg-secondary border-secondary cart_card">
+		<h3 class="text-light">Vos ventes</h3>
+	</div>
+
+	<div class="card border-light cart_card_2">
+		<div class="card-body cart_card-body">
+
+			<% @sales.each.with_index do |sale, index1| %>
+
+				<div class="d-flex">
+					<p class="card-text text-secondary">Vente <%= index1 +1 %> </p>
+				</div>
+				<h5>Produit : <%= sale.item.title %></h5>
+				<h5>Client : <%= sale.user.email %></h5>
+				<hr>
+				<br>
+
+			<% end %>
+
+		</div>
+	</div>
+
+	<br>
+
+	<div class="card bg-secondary border-secondary cart_card">
+		<h3 class="text-light">Vos users</h3>
+	</div>
+
+	<div class="card border-light cart_card_2">
+		<div class="card-body cart_card-body">
+
+			<% @users.each do |user| %>
+				<% unless user.email == current_user.email %> 
+					<h5><%= user.email %></h5>
+					<h5>Inscription : <%=user.created_at %></h5>
+					<hr>
+					<br>
+				<% end %>
+			<% end %>
+
+		</div>
+	</div>
+</div>

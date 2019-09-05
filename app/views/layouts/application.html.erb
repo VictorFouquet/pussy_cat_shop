@@ -32,12 +32,14 @@
 
         <% current_user.cart.items.length %>
 
-          <a type="button" class="btn btn-secondary"<%= link_to "Panier (#{current_user.cart.current_orders.length})", cart_path(current_user.cart.id) %></a>
+          <a type="button" class="btn btn-secondary"<%= link_to "Panier (#{current_user.cart.current_orders.length})", carts_path %></a>
       <% end %>
 
       <a type="button" class="btn btn-secondary"<%= link_to "Déconnexion ", '/users/sign_out', method: :delete %></a>
       <a type="button" class="btn btn-secondary"<%= link_to "Mon profil", profils_index_path%></a>
-
+      <% if current_user.is_admin? %>
+        <a type="button" class="btn btn-secondary" <%= link_to "Dashboard", sales_path %></a>
+      <% end %>
     <% else %>
       <a type="button" class="btn btn-secondary" <%= link_to "Inscription", '/users/sign_up' %></a>
       <a type="button" class="btn btn-secondary" <%= link_to "Connection",'/users/sign_in' %></a>

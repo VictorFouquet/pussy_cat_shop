@@ -6,4 +6,19 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
   end
+
+  def new
+  	@item = Item.new
+  end
+
+  def create
+  	@item = Item.create!(
+  		title: params[:title],
+  		description: params[:description],
+  		price: params[:price],
+  		image_url: "cat1.jpg"
+  		)
+  	@item.avatar.attach(params[:avatar])
+  	redirect_to root_path
+  end
 end

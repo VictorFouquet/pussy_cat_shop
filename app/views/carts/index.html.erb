@@ -12,7 +12,7 @@
 			<div class="card-body cart_card-body">
 				<div class="d-flex justify-content-between">
 					<p class="card-text text-secondary"><%= cart_item.item.price %> $</p>
-					<a type="button" class="btn btn-danger"<%= link_to "X", item_current_order_path(cart_item.id), method: :delete %></a>
+					<a type="button" class="btn btn-danger"<%= link_to "X", item_current_order_path(cart_item.id,cart_item.id), method: :delete %></a>
 				</div>
 			</div>
 

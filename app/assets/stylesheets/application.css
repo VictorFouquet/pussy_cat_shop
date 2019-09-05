@@ -10797,6 +10797,9 @@ legend {
 .index-body{
   background-color: #FFD2D2;
   height: auto;
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
 }
 
 .cart-body{
@@ -10868,6 +10871,7 @@ legend {
 .index-item-grid{
   width: 100vw !important;
   margin: 0;
+  padding-bottom: 60px;
 }
 
 .cart_card{
@@ -10934,6 +10938,8 @@ legend {
   margin-left: 19px;
 }
 
+
+
 /*	###   matthieu Edit   ###################################################################################   */
 
 .container-cat-product {
@@ -10971,7 +10977,7 @@ legend {
 {
  width: 100vw;
  margin-left: 0;
- padding: 40px 15px 40px 70px;
+ padding: 40px 0;
 }
 .bold
 {
@@ -10985,14 +10991,23 @@ legend {
 }
 .footer-column-container{
   border-right: 2px solid #fff;
-  padding-right: 60px;
+  padding: 0 60px;
 }
 
 .footer-column-container-2{
   border-right: 2px solid #fff;
-  padding-left: 60px;
+  padding: 0 60px;
 }
 
 .footer-column-container-3{
-  padding-left: 60px;
+  padding: 0 60px;
+}
+
+@media (max-width: 767px) {
+  .footer-column-container{
+    border-right: 0px solid transparent;
+  }
+  .footer-column-container-2{
+    border-right: 0px solid transparent;
+  }
 }

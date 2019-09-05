@@ -23,7 +23,7 @@
 		<% end %>
 	</div>
 
-	<div class="d-flex justify-content-center row align-content-start index-item-grid">
+	<div class="d-flex justify-content-center row index-item-grid">
 		<% Item.all.each do |item| %>
 			<div class="card mb-3 index-card">
 				<h3 class="card-header"><%= link_to item.title, item_path(item.id) %></h3>

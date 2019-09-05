@@ -13,12 +13,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+  <%= favicon_link_tag asset_path('logo-PCS.ico') %>
+
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" <%= link_to "Pussy cat shop", root_path %></a>
+    <%= image_tag("Logo-PCS.png") %>
+    <a class="navbar-brand logo-text" <%= link_to "Pussy Cat Shop", root_path %></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,14 +43,65 @@
         <a type="button" class="btn btn-secondary" <%= link_to "Dashboard", sales_path %></a>
       <% end %>
     <% else %>
-      <a type="button" class="btn btn-secondary" <%= link_to "Créer un compte", '/users/sign_up' %></a>
-      <a type="button" class="btn btn-secondary" <%= link_to "Se connecter",'/users/sign_in' %></a>
+      <a type="button" class="btn btn-secondary" <%= link_to "Inscription", '/users/sign_up' %></a>
+      <a type="button" class="btn btn-secondary" <%= link_to "Connection",'/users/sign_in' %></a>
     <% end %>
 
   </div>
 </nav>
 
 <%= yield %>
+
+ <!-- Footer -->
+    <footer id="footer" class="page-footer font-small blue fixed-bottom">
+
+      <div class="card bg-secondary border-secondary cart_card vw-footer">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left" style="color:#FFFFFF;">
+          <!-- Grid row -->
+          <div class="row">
+
+            <div class="col-md-3 mt-md-0 mt-3 footer-column-container">
+                 <%= image_tag("Logo-PCS-02.png", :alt => "pussy-cat-shop-logo", :class => "footer-logo") %>
+                 <h3 class="text-uppercase bold" style="text-align:right;" >Pussy Cat shop ©</h3>
+            </div>
+            <!-- Grid column -->
+            <div class="col-md-6 mt-md-0 mt-3 footer-column-container-2">
+              <!-- Content -->
+              <h4 class="text-uppercase bold " >Pussy Cat Shop</h4>
+              </br>
+              <p> Pussy Cat Shop is your partner number 1 for finding amazing cats that will make you live unforgettable experiences.</p>
+              <p> Pussy Cat Shop guarrantee all delivery within 48H.</p>
+            </div>
+            <!-- Grid column -->
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3 footer-column-container-3" style="text-align:left;color:#FFFFFF;">
+              <!-- Links -->
+              <h4 class="text-uppercase bold">Services</h4>
+
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!" style="color:#FFFFFF;">Toilettage</a>
+                </li>
+                <li>
+                  <a href="#!" style="color:#FFFFFF;">Voir mon profil</a>
+                </li>
+                <li>
+                  <a href="#!" style="color:#FFFFFF;">S.A.V</a>
+                </li>
+              </ul>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+        <!-- Footer Links -->
+      </div>
+      <!-- Card Links -->
+    </footer>
+    <!-- Footer -->
 </body>
 
 </html>

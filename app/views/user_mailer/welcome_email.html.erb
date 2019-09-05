@@ -28,7 +28,7 @@
   <br/>
 
   <%= current_order.item.title %>
-<img src="<%= rails_blob_url(current_order.item.avatar) %>" </img>
+<%= rails_blob_url(current_order.item.avatar) %>
 
   <% end %>
 <% end %>

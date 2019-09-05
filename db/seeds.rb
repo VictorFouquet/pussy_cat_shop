@@ -9,7 +9,7 @@
 Sale.destroy_all
 Item.destroy_all
 User.destroy_all
-superadmin = User.create(email: "Admin@yopmail.com", password: "adminadmin", password_confirmation: "adminadmin", is_admin?: true )
+superadmin = User.create(email: "pussycat@yopmail.com", password: "adminadmin", password_confirmation: "adminadmin", is_admin?: true )
 10.times do
 
 	allCatsPics = ["Cat-1.jpg", "Cat-2.jpg", "Cat-3.jpg", "Cat-4.jpg", "Cat-5.jpg", "Cat-6.jpg", "Cat-7.jpg", "Cat-8.jpg", "Cat-9.jpg"]

@@ -23,12 +23,13 @@
 
 <p>
  <h1 style="font:20px/1.25em 'Helvetica Neue',Arial,Helvetica;margin:0;color:#333;text-align:left"> New Order! </h1>
-<p> <%= @user.email %> </p>
-<% @user.cart.current_orders.each do |current_order| %>
-<br/>
-<%= current_order.item.title %>
+<% if @user.cart != nil %>
+  <p> <%= @user.email %> </p>
+  <% @user.cart.current_orders.each do |current_order| %>
+  <br/>
+  <%= current_order.item.title %>
+  <% end %>
 <% end %>
-
 </p>
 
 

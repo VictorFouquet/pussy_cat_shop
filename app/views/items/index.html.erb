@@ -10,38 +10,37 @@
 		<p class="lead text-light bienvenue-index">Bienvenue sur</p>
 		<h1 class="display-3 text-light">Pussy Cat Shop</h1>
 		<p class="lead text-light">Trouvez votre bonheur grace à notre incroyable sélection de photo de chatons ;)</p>
+			<%= image_tag "Logo-PCS-02.png", alt: 'avatar', :class => "jumbotron-logo" %>
 	</div>
 
-	<div class="d-flex justify-content-center">
+	<div class="d-flex justify-content-center decouvrez-container">
 		<h1 class="text-center text-secondary bg-light decouvrez-bg">Découvrez nos photos</h1>
 	</div>
 
 	<div class="d-flex justify-content-center row align-content-start index-item-grid">
 		<% Item.all.each do |item| %>
-			<div class="index-card-container">
-				<div class="card mb-3 index-card">
-					<h3 class="card-header"><%= link_to item.title, item_path(item.id) %></h3>
-					<%= link_to item_path(item.id) do %>
-						<% if item.avatar.attached? %>
-		  					<%= image_tag item.avatar, alt: 'avatar', :class => "index-card-img" %>
-						<% else %>
-							<div class="index-card-img-container">
-								<%= image_tag item.image_url, :alt => "Cat", :class => "index-card-img" %>
-							</div>
-						<% end %>
+			<div class="card mb-3 index-card">
+				<h3 class="card-header"><%= link_to item.title, item_path(item.id) %></h3>
+				<%= link_to item_path(item.id) do %>
+					<% if item.avatar.attached? %>
+	  					<%= image_tag item.avatar, alt: 'avatar', :class => "index-card-img" %>
+					<% else %>
+						<div class="index-card-img-container">
+							<%= image_tag item.image_url, :alt => "Cat", :class => "index-card-img" %>
+						</div>
 					<% end %>
-					<div class="card-body">
-						<p class="card-text index-card-text"><%= item.description %></p>
-						<br>
-						<h5 class="card-subtitle text-secondary"><%= item.price %> $</h5>
-					</div>
-					<div class="card-body">
-						<a class ="btn btn-secondary"<%= link_to "Détails ", item_path(item.id) %></a>
-						<a class="btn btn-secondary"<%= link_to "Ajouter au panier ", item_current_orders_path(item.id), method: :create %> </a>
-					</div>
-					<div class="card-footer text-muted">
-						<p class="card-text">ajouté le <%= item.created_at %></p>
-					</div>
+				<% end %>
+				<div class="card-body">
+					<p class="card-text index-card-text"><%= item.description %></p>
+					<br>
+					<h5 class="card-subtitle text-secondary"><%= item.price %> $</h5>
+				</div>
+				<div class="card-body">
+					<a class ="btn btn-secondary"<%= link_to "Détails ", item_path(item.id) %></a>
+					<a class="btn btn-secondary"<%= link_to "Ajouter au panier ", item_current_orders_path(item.id), method: :create %> </a>
+				</div>
+				<div class="card-footer text-muted">
+					<p class="card-text">ajouté le <%= item.created_at %></p>
 				</div>
 			</div>
 		<% end %>

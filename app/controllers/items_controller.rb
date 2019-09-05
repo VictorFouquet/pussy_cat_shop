@@ -21,4 +21,11 @@ class ItemsController < ApplicationController
   	@item.avatar.attach(params[:avatar])
   	redirect_to root_path
   end
+
+  def destroy
+  	puts("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+  	puts(params)
+  	puts("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+  	Item.find(params[:id]).destroy
+  end
 end

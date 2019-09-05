@@ -10,12 +10,14 @@
         </div>
         <div class="card-body">
           <a class="btn btn-secondary"<%= link_to "Ajouter au panier ", item_current_orders_path(@item.id), method: :create %> </a>
-        </div>
-        <% if current_user && current_user.is_admin? %> %>
-          <%= form_tag item_avatars_path(@item), multipart: true do %>
-          <%= file_field_tag :avatar %>
-          <%= submit_tag "uploader l'avatar" %>
+          <br/><br/>
+          <% if current_user && current_user.is_admin? %>
+            <%= form_tag item_avatars_path(@item), multipart: true do %>
+            <%= file_field_tag :avatar %>
+            <%= submit_tag "uploader l'avatar" %>
           <% end %>
+        </div>
+        
         <% end %>
         <div class="card-footer text-muted">
           <p class="card-text">ajouté le <%= @item.created_at %></p>

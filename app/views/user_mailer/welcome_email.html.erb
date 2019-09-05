@@ -26,7 +26,9 @@
 <% if @user.cart != nil %>
   <% @user.cart.current_orders.each do |current_order| %>
   <br/>
+
   <%= current_order.item.title %>
+<img src="<%= rails_blob_url(current_order.item.avatar) %>" </img>
 
   <% end %>
 <% end %>

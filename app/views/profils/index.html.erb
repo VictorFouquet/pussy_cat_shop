@@ -35,7 +35,7 @@
 				<div class="d-flex">
 					<p class="card-text text-secondary">Commande <%= index1 +1 %> </p>
 				</div>
-				<h5><%= sale.item.title %></h5>
+				<h5><%= link_to sale.item.title, item_path(sale.item.id) %></h5>
 
 				<hr>
 				<br>

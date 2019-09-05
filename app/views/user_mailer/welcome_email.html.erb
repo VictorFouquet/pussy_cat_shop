@@ -20,13 +20,14 @@
 
  <a href="https://trello.com/confirm?confirmationToken=fb3c91a0138e7baf21c04c692c83ea13&amp;idMember=5d6cd4fe90196c38344d1936&amp;returnUrl=%2F" style="border-radius:3px;background:#F3969A;color:#fff;display:block;font-weight:700;font-size:16px;line-height:1.25em;margin:24px auto 24px;padding:10px 18px;text-decoration:none;width:220px;text-align:center" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://trello.com/confirm?confirmationToken%3Dfb3c91a0138e7baf21c04c692c83ea13%26idMember%3D5d6cd4fe90196c38344d1936%26returnUrl%3D%252F&amp;source=gmail&amp;ust=1567673082530000&amp;usg=AFQjCNEg3Sk0mgms6AYnMloiWYDCK_EKcg"> Have a look at your order </a>
 
-
+ <a href="https://pussycat.herokuapp.com/profils/index"> Here is the order details </a>
 <p>
  <h1 style="font:20px/1.25em 'Helvetica Neue',Arial,Helvetica;margin:0;color:#333;text-align:left"> Here are your items ! </h1>
 <% if @user.cart != nil %>
   <% @user.cart.current_orders.each do |current_order| %>
   <br/>
   <%= current_order.item.title %>
+
   <% end %>
 <% end %>
 
